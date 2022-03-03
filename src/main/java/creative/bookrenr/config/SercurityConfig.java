@@ -18,5 +18,12 @@ public class SercurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
+        http.authorizeRequests().
+//                antMatchers("/user/**", "/image/**", "/subscribe/**", "/comment/**", "/api/**").authenticated()
+                antMatchers("/user/**", "/image/**", "/subscribe/**", "/comment/**").authenticated()
+                .anyRequest().permitAll()
+                .and().formLogin().loginPage("/auth/signin")
+                .loginProcessingUrl("/auth/signin")
+                .defaultSuccessUrl("/");
     }
 }
