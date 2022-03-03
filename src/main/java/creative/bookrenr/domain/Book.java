@@ -3,15 +3,13 @@ package creative.bookrenr.domain;
 import creative.bookrenr.enums.RentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Getter
+@Getter @Setter
 @AllArgsConstructor
 public class Book{
 
@@ -25,6 +23,7 @@ public class Book{
     private String publisher; //출판사
     private Date publicationDate; //출판일
 
+    @Enumerated(value = EnumType.STRING)
     public RentStatus rentStatus; //RENTED, NOT
 
     @OneToOne(mappedBy = "book")

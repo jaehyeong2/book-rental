@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>책 등록</title>
 </head>
 <body>
-
+<div class="container">
+    <h3>책등록</h3>
+    <form th:action="@{/admin/book}" method="post" th:object="${bookReqDto}">
+        <div class="form-group">
+            <label for="title">제목</label>
+            <input type="text" class="form-control" required th:field="*{title}" name="title" id="title"
+                   placeholder="제목을 입력해주세요">
+        </div>
+        <div class="form-group">
+            <label for="author">저자</label>
+            <input type="text" class="form-control" required th:field="*{author}" name="author" id="author"
+                   placeholder="저자를 입력해주세요">
+        </div>
+        <div class="form-group">
+            <label for="isbn">고유번호</label>
+            <input type="text" class="form-control" required th:field="*{isbn}" name="isbn" id="isbn"
+                   placeholder="고유번호를 입력해주세요">
+        </div>
+        <div class="form-group">
+            <label for="publisher">출판사</label>
+            <input type="text" class="form-control" required th:field="*{publisher}" name="publisher" id="publisher"
+                   placeholder="출판사를 입력해주세요">
+        </div>
+        <button type="submit" class="btn btn-primary">등록하기</button>
+    </form>
+</div>
 </body>
 </html>

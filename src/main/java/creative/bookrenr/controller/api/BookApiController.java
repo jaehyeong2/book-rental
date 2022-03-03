@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookApiController {
     private final BookService bookService;
 
-    @PostMapping("/api/book")
-    public ResponseEntity<?> save(Book book){
-        Book saveBook = bookService.save(book);
-        return new ResponseEntity<>(new ResDto<>("책 등록완료",saveBook.getId()),HttpStatus.OK);
-    }
+//    @PostMapping("/api/book")
+//    public ResponseEntity<?> save(Book book){
+//        Book saveBook = bookService.save(book);
+//        return new ResponseEntity<>(new ResDto<>("책 등록완료",saveBook.getId()),HttpStatus.OK);
+//    }
 
-    @DeleteMapping("/api/book/{id}")
+    @DeleteMapping("/admin/book/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Long id){
         bookService.deleteById(id);
         return new ResponseEntity<>(new ResDto<>("책 삭제 완료",id),HttpStatus.OK);

@@ -2,11 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>관리자</title>
 </head>
 <body>
-<div>관리자 화면입니다</div>
-<button th:href="@{/booksAdd}"> 책 등록하기</button>
-<button th:method="delete"> 책 삭제하기</button>
+<div class="container-fluid">
+<h3>관리자 화면입니다</h3>
+    <table class="table">
+        <tr th:each="book : ${books}">
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.isbn}"></td>
+            <td th:text="${book.publisher}"></td>
+            <td><a th:href="@{/admin/book/{id}(id=${book.id})}" class="btn btn-danger">삭제하기</a></td>
+        </tr>
+        <a th:href="@{/admin/book}" class="card-link btn btn-primary">책 등록하기</a>
+    </table>
+</div>
 </body>
 </html>
