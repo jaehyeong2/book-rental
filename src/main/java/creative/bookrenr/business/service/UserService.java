@@ -1,7 +1,7 @@
-package creative.bookrenr.service;
+package creative.bookrenr.business.service;
 
-import creative.bookrenr.domain.User;
-import creative.bookrenr.repository.UserRepository;
+import creative.bookrenr.business.domain.user.User;
+import creative.bookrenr.business.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

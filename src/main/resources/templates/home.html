@@ -11,6 +11,16 @@
     <li>
         <a href="/signin">로그인</a>
     </li>
+
+    <table class="table">
+        <tr th:each="book : ${books}">
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.isbn}"></td>
+            <td th:text="${book.publisher}"></td>
+            <td><a th:href="@{/admin/book}" class="card-link btn btn-primary">책 대여하기</a></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>

@@ -1,10 +1,15 @@
-package creative.bookrenr.domain;
+package creative.bookrenr.business.domain.rent;
 
+import creative.bookrenr.business.domain.user.User;
+import creative.bookrenr.business.domain.book.Book;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Getter
 public class Rent {
@@ -21,11 +26,4 @@ public class Rent {
     @OneToOne(fetch = FetchType.LAZY)
     public Book book;
 
-
-    // 대여일자
-    public LocalDateTime rentDate;
-
-    public void rentDate(){
-        this.rentDate = LocalDateTime.now();
-    }
 }

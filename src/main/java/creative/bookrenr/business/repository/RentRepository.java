@@ -1,7 +1,6 @@
-package creative.bookrenr.repository;
+package creative.bookrenr.business.repository;
 
-import creative.bookrenr.domain.Book;
-import creative.bookrenr.domain.Rent;
+import creative.bookrenr.business.domain.rent.Rent;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RentRepository extends JpaRepository<Rent,Long> {

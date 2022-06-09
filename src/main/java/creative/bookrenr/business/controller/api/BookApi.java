@@ -1,20 +1,17 @@
-package creative.bookrenr.controller.api;
+package creative.bookrenr.business.controller.api;
 
-import creative.bookrenr.domain.Book;
-import creative.bookrenr.dto.ResDto;
-import creative.bookrenr.service.BookService;
+import creative.bookrenr.business.dto.ResDto;
+import creative.bookrenr.business.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class BookApiController {
+public class BookApi {
     private final BookService bookService;
 
 //    @PostMapping("/api/book")
