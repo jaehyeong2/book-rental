@@ -1,6 +1,6 @@
 package creative.bookrenr.business.controller;
 
-import creative.bookrenr.business.service.BookService;
+import creative.bookrenr.business.service.book.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

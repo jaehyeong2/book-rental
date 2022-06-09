@@ -13,8 +13,10 @@ public enum ErrorCode {
     HANDLE_ACCESS_DENIED(403,  "권한이 없습니다."),
     HANDLE_INVALID_TOKEN(401,  "토큰이 없거나 올바르지 않습니다."),
     NOT_MATCH_PASSWORD(500,"아이디와 비밀번호를 확인 해 주세요."),
-    DUPLICATE_LOGIN_ID(500,"이미 존재하는 ID입니다")
-    ;
+    DUPLICATE_LOGIN_ID(500,"이미 존재하는 ID입니다"),
+    DUPLICATE_ISBN(500,"이미 사용중인 ISBN입니다"),
+    METHOD_NOT_ALLOWED(500,"허가되지 않은 메소드입니다" ),
+    INVALID_INPUT_VALUE(500,"잘못된 입력입니다");
 
 
     private final int status;
