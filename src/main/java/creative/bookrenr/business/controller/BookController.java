@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RequiredArgsConstructor
 @Controller
@@ -24,12 +25,6 @@ public class BookController {
     public String bookAdd(Model model){
         model.addAttribute("bookReqDto", new BookInfoDto());
         return "booksAdd";
-    }
-
-    @PostMapping("/admin/book")
-    public String save(Book book){
-        Book saveBook = bookService.save(book);
-        return "redirect:/admin";
     }
 
 //    @DeleteMapping("/admin/book/{id}")

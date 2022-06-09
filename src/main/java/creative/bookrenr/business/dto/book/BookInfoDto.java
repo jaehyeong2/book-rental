@@ -13,6 +13,8 @@ public class BookInfoDto {
     private String title;
     private String author;
     private String isbn; //고유 번호
+    private Long categoryId;
+    private Long publisherId;
 
     public BookInfoDto(BookInfo bookInfo) {
         this.title = bookInfo.getTitle();

@@ -1,4 +1,4 @@
-package creative.bookrenr.business.repository;
+package creative.bookrenr.business.repository.rent;
 
 import creative.bookrenr.business.domain.rent.Rent;
 import org.springframework.data.jpa.repository.JpaRepository;
