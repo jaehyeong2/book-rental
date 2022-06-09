@@ -12,15 +12,15 @@ public class Book{
     @Id @GeneratedValue
     private Long id;
 
-    private String title;
-    private String author;
-    @Comment("고유번호")
-    private String isbn;
-
-    @Comment("출판사")
-    private String publisher;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private BookInfo bookInfo;
 
     @Enumerated(value = EnumType.STRING)
     public RentStatus rentStatus; //RENTED, NOT
 
+    public void rentBook() {
+        this.rentStatus = RentStatus.RENTED;
+    }
+
+    // 같은 isbn의 책이 여러권 있을 때?? -> book이랑 book info 테이블을 나누는게 맞을까?
 }

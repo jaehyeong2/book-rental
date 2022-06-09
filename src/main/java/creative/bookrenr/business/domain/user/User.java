@@ -5,6 +5,7 @@ import creative.bookrenr.business.domain.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Comment;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,6 +26,9 @@ public class User extends BaseTimeEntity {
     private String name;
     private String phone;
     private String password;
+    
+    @Comment("대여 권수")
+    private int rentCount;
 
     @OneToMany(mappedBy = "user")
     public List<Rent> rentList = new ArrayList<>();

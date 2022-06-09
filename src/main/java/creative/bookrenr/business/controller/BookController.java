@@ -1,8 +1,7 @@
 package creative.bookrenr.business.controller;
 
 import creative.bookrenr.business.domain.book.Book;
-import creative.bookrenr.business.dto.BookReqDto;
-import creative.bookrenr.business.domain.book.RentStatus;
+import creative.bookrenr.business.dto.book.BookInfoDto;
 import creative.bookrenr.business.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -23,13 +22,12 @@ public class BookController {
 
     @GetMapping("/admin/book")
     public String bookAdd(Model model){
-        model.addAttribute("bookReqDto", new BookReqDto());
+        model.addAttribute("bookReqDto", new BookInfoDto());
         return "booksAdd";
     }
 
     @PostMapping("/admin/book")
     public String save(Book book){
-        book.setRentStatus(RentStatus.NOT);
         Book saveBook = bookService.save(book);
         return "redirect:/admin";
     }
