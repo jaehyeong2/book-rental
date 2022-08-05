@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class Rent {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @JoinColumn(name = "user_id")

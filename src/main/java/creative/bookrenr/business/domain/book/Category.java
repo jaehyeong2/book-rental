@@ -17,7 +17,7 @@ import javax.persistence.Id;
 @Getter
 public class Category extends BaseTimeEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;

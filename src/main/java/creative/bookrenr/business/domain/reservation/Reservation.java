@@ -16,7 +16,7 @@ import javax.persistence.*;
 @Getter
 public class Reservation extends BaseTimeEntity {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)

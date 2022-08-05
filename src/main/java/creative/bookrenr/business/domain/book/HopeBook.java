@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Entity
 public class HopeBook extends BaseTimeEntity {
 // 희망도서
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)

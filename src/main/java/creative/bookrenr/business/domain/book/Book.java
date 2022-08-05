@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 public class Book{
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)

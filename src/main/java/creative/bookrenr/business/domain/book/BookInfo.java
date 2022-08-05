@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Getter
 public class BookInfo extends BaseTimeEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)

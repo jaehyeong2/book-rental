@@ -1,6 +1,7 @@
 package creative.bookrenr.business.controller.book;
 
 import creative.bookrenr.business.dto.book.CategoryDto;
+import creative.bookrenr.business.dto.book.CategoryUpdate;
 import creative.bookrenr.business.service.CategoryService;
 import creative.bookrenr.global.dto.ApiResponse;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class CategoryApi {
     }
 
     @PutMapping("/{id}")
-    public ApiResponse<String> changeName(@RequestBody CategoryDto dto,@PathVariable Long id){
+    public ApiResponse<String> changeName(@RequestBody CategoryUpdate dto, @PathVariable Long id){
         return new ApiResponse<>(categoryService.changeName(id,dto));
     }
 }

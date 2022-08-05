@@ -26,24 +26,26 @@ public class BookInfoService {
     public String save(BookInfoDto dto) {
         isbnCheck(dto.getIsbn());
 
-        Long categoryId = dto.getCategoryId();
-        Category category = categoryRepository.findById(categoryId).orElseThrow(() -> {
-            throw new NoSuchElementException("조회 실패");
-        });
-
-        Long publisherId = dto.getPublisherId();
-        Publisher publisher = publisherRepository.findById(publisherId).orElseThrow(() -> {
-            throw new NoSuchElementException("조회 실패");
-        });
+        Category category = getCategory(dto.getCategoryId());
+        Publisher publisher = getPublisher(dto.getPublisherId());
 
         BookInfo bookInfo = BookInfo.create(dto, category, publisher);
 
         infoRepository.save(bookInfo);
-
         return "Y";
     }
 
     private void isbnCheck(String isbn) {
         bookQueryRepository.IsbnDuplicateCheck(isbn);
+    }
+
+    private Category getCategory(Long id) {
+        Category category = categoryRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        return category;
+    }
+
+    private Publisher getPublisher(Long id) {
+        Publisher publisher = publisherRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        return publisher;
     }
 }
